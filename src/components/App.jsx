@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Footer from "./Footer.jsx";
 
 function App() {
     return (
-        <h1>App.jsx</h1>
+        <div>
+        <Footer></Footer>
+        </div>
     );
 }
 
