@@ -25,7 +25,7 @@ const [formError, setFormError] = useState(null);
                        <input value={value} onChange={(e)=>setvalue(e.target.value)} className="inputarea" type="text"></input> 
                         </label>
                     
-                        <button class="first next" onClick={handlesubmit}>Submit</button>
+                        <button class="first next" >Submit</button>
                     </form>
                     <form class="slider-form slider-two">
                         <h2>Are you happy with our service?</h2>
