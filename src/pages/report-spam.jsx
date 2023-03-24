@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import supabase from "./Supabaseclient"
 function Report() {
-    const [selects, setSelects] = useState();
+    const [selects, setSelects] = useState("Phone Number");
     const [value, setvalue] = useState();
     const [formError, setFormError] = useState(null);
 
@@ -64,29 +64,12 @@ function Report() {
 
                         <button class="first next" onClick={handleSubmit}>Submit</button>
                     </form>
-                    <form class="slider-form slider-two">
-                        <h2>Are you happy with our service?</h2>
-                        <div class="label-ctr">
-                            <label class="radio">
-                                <input type="radio" value="happy" name="condition" />
-                                <div class="emot happy">
-                                    <div class="mouth sad"></div>
-                                </div>
-                            </label>
-                            <label class="radio">
-                                <input type="radio" value="happy" name="condition" />
-                                <div class="emot happy">
-                                    <div class="mouth smile"></div>
-                                </div>
-                            </label>
-                        </div>
-                        <button class="second next">Next Step</button>
-                    </form>
-                    <div class="slider-form slider-three">
-                        <h2>Hello, <span class="yourname"></span></h2>
+                   
+                    {value &&<div class="slider-form slider-three">
+                        
                         <h3>Thank you for your input!</h3>
 
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

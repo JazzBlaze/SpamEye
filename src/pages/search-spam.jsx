@@ -1,13 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
+import Spam_true from '../components/Spam_true'
+import Spam_false from '../components/Spam_false'
 import supabase from "./Supabaseclient"
 function Search(){
-    const [selects, setSelects] = useState();
-    const [value, setvalue] = useState();
+    const [selects, setSelects] = useState('');
+    const [value, setvalue] = useState('');
     const [fetchError, setFetchError] = useState(null);
-
-
+    const [spam,setSpam]=useState(null);
+    const [count,setcount]=useState(0)
+    var count_test=0
     const handleSubmit = async () => {
         if (selects == "Phone Number") {
             const { data, error } = await supabase
@@ -20,13 +23,18 @@ function Search(){
                 console.log(error)
             }
             if (data) {
-               let count;
+           
                 console.log(data)
                for(let i=0;i<data.length;i++){
                 if (data[i].value==value){
-                    count++;
+                    console.log(value)
+                    console.log("found")
+                    setSpam(true)
+                    count_test+=1
+                    console.log(count_test)
                 }
                }
+               setcount(count_test);
                 setFetchError(null)
 
             }
@@ -42,12 +50,19 @@ function Search(){
             console.log(error)
         }
         if (data) {
-            let count;
+          
             for(let i=0;i<data.length;i++){
                 if (data[i].value==value){
-                    count++;
+                  console.log("found");
+                     setSpam(true)
+                    count_test+=1
+                    console.log(count_test)
                 }
                }
+               setcount(count_test);
+                setFetchError(null)
+                
+               
             setFetchError(null)
 
         }}
@@ -57,15 +72,16 @@ function Search(){
 
     return (
 
-        <div class="search-container slider-one-active">
+        <div className="container slider-one-active">
 
 
-            <div class="slider-ctr">
-                <div class="slider">
+            <div className="slider-ctr">
+                <div className="slider">
                     <form class="slider-form slider-one">
                         <h2>Verify if its a spam or not</h2>
-                        <label class="input">
+                        <label className="input">
                             <p>{selects}</p>
+                            
                             <select value={selects} className="dropd" onChange={e => setSelects(e.target.value)}>
                                 <option >Phone Number</option>
                                 <option value="Email">Email</option>
@@ -77,7 +93,8 @@ function Search(){
 
                         <button class="first next" type="button" onClick={handleSubmit}>Submit</button>
                     </form>
-                    
+                    {/* {spam && <Spam_true count={count}/>|| !spam && <Spam_false/>} */}
+                    <p>{count}</p>
                 </div>
             </div>
         </div>
