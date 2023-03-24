@@ -1,0 +1,23 @@
+.button{
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+}
+
+.btn--swiggle {
+    width: 43.5rem;
+    color: black;
+    font-size: 3rem;
+    height: 18rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/button.gif);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .btn--swiggle:hover {
+    transform: scale(1.05);
+  }
+  
