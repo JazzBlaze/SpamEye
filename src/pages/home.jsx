@@ -1,8 +1,11 @@
 import React from 'react';
+import Page1 from "../components/Page1";
 
 function Home() {
     return (
-        <h1>Home page</h1>
+        <div>
+        <Page1></Page1>
+        </div>
     );
 }
 

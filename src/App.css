@@ -105,3 +105,8 @@ a {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.alignRight{
+  display: block;
+  margin-left: auto;
+}
