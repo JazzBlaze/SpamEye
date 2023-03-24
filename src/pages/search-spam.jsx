@@ -57,7 +57,7 @@ function Search(){
 
     return (
 
-        <div class="container slider-one-active">
+        <div class="search-container slider-one-active">
 
 
             <div class="slider-ctr">

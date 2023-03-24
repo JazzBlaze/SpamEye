@@ -44,7 +44,7 @@ function Report() {
 
     return (
 
-        <div class="container slider-one-active">
+        <div class="report-container slider-one-active">
 
 
             <div class="slider-ctr">

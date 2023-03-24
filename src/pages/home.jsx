@@ -5,7 +5,6 @@ import Menu from '../components/Menu';
 import Verify from '../components/Verify';
 import Report from '../components/Report';
 import Stats from '../components/Stats';
-import Page1 from "../components/Page1";
 
 function Home() {
     return (
