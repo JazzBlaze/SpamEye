@@ -1,10 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 function App() {
     return (
-        <div>
-        <h1>Add components..</h1>
-        </div>
+        <h1>App.jsx</h1>
     );
 }
 
