@@ -16,8 +16,7 @@ function Home() {
             <About/>
             <Report/>
             <Stats/>
-            
-
+          
         </>
         
     );
