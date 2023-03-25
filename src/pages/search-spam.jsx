@@ -4,6 +4,7 @@ import { useRef } from "react";
 import SpamTrue from '../components/SpamTrue'
 import SpamFalse from '../components/SpamFalse'
 import supabase from "./Supabaseclient"
+import Fetch from './Fetch';
 import { useQuery } from 'react-query'
 
 
@@ -41,6 +42,8 @@ function Search(){
     );
 
 
+    const[notsms,setnotSms]=useState(null)
+    const[sms,setSms]=useState(null)
     var count_test=0
     const handleSubmit = async () => {
         if (selects == "Phone Number") {
@@ -103,12 +106,43 @@ function Search(){
             setFetchError(null)
 
         }}
+        if (selects == "SMS") {
+            async function query(data) {
+                const response = await fetch(
+                    "https://api-inference.huggingface.co/models/mrm8488/bert-tiny-finetuned-sms-spam-detection",
+                    {
+                        headers: { Authorization: "Bearer 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" },
+                        method: "POST",
+                        body: JSON.stringify(data),
+                    }
+                );
+                const result = await response.json();
+                return result;
+            }
+
+            query({ "inputs": value }).then((response) => {
+                response.map((data)=>{
+                   setnotSms((data[0].score*100).toFixed(2))
+                   setSms((data[1].score*100).toFixed(2))
+                 
+                })
+            });
+        }
         if (selects == "URL"){
             setFetchPosts(true)
             console.log(fetchPosts)
             
 
         }
+
+
+
+        if(sms>notsms){
+            setnotSms(null)
+           }
+           else if(sms<notsms){
+            setSms(null)
+           }
     }
     
 
@@ -145,6 +179,10 @@ function Search(){
             {urldata.map((user) => (
                 <p>{user.unsafe}</p>
             ))}
+            </div> */}
+            {/* <div className="smsdiv">
+                <p className="sms">{sms}</p>
+                <p className="notsms">{notsms}</p>
             </div> */}
             {spam && <SpamTrue count={count}/>}
                         <div className={test}>{!spam && <SpamFalse/>}</div>
