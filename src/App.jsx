@@ -22,6 +22,8 @@ function App(){
                             <Route path="/profile" element={<Profile />}></Route>
                             <Route path="/search-spam" element={<Search />}></Route>
                             <Route path="/report-spam" element={<Report />}></Route>
+                            <Route path="/test" element={<Test/>}></Route>
+                            
 
                     </Routes>
                 </BrowserRouter>

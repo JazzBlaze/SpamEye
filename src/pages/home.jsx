@@ -6,6 +6,7 @@ import Verify from '../components/Verify';
 import Report from '../components/Report';
 import Stats from '../components/Stats';
 
+
 function Home() {
     return (
         <>  
@@ -15,6 +16,7 @@ function Home() {
             <About/>
             <Report/>
             <Stats/>
+            
 
         </>
         
