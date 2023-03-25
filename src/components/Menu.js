@@ -60,8 +60,8 @@ function Menu() {
                         <ul className="options">
                 
                             <li className="nav"><a href="/"  target="_blank" className="nav-link">Home <span className="small-number">01</span></a></li>
-                            <li className="nav"><a href="/events"  target="_blank" className="nav-link">Spam Detection<span className="small-number">02</span></a></li>
-                            <li className="nav"><a href="/pro-shows"  target="_blank" className="nav-link">Report Spam<span className="small-number">03</span></a></li>
+                            <li className="nav"><a href="/search-spam"  target="_blank" className="nav-link">Spam Detection<span className="small-number">02</span></a></li>
+                            <li className="nav"><a href="/report-spam"  target="_blank" className="nav-link">Report Spam<span className="small-number">03</span></a></li>
                             <li className="nav"><a href="/merchandise" target="_blank" className="nav-link">Login <span className="small-number">04</span></a></li>
                             <li className="nav"><a href="/gallery"  target="_blank" className="nav-link">Contact Us <span className="small-number">05</span></a></li>
 

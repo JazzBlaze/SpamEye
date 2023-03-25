@@ -1,0 +1,7 @@
+.classification{
+    display: flex;
+    justify-content: center;
+}
+.score{
+    text-align: center;
+}
