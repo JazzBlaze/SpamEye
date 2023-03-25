@@ -122,8 +122,9 @@ function Search(){
 
             query({ "inputs": value }).then((response) => {
                 response.map((data)=>{
-                   setnotSms(data[0].score*100)
-                   setSms(data[1].score*100)
+                   setnotSms((data[0].score*100).toFixed(2))
+                   setSms((data[1].score*100).toFixed(2))
+                 
                 })
             });
         }
@@ -133,6 +134,15 @@ function Search(){
             
 
         }
+
+
+
+        if(sms>notsms){
+            setnotSms(null)
+           }
+           else if(sms<notsms){
+            setSms(null)
+           }
     }
     
 
@@ -169,6 +179,10 @@ function Search(){
             {urldata.map((user) => (
                 <p>{user.unsafe}</p>
             ))}
+            </div> */}
+            {/* <div className="smsdiv">
+                <p className="sms">{sms}</p>
+                <p className="notsms">{notsms}</p>
             </div> */}
             {spam && <SpamTrue count={count}/>}
                         <div className={test}>{!spam && <SpamFalse/>}</div>
