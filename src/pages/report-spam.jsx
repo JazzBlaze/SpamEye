@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import supabase from "./Supabaseclient"
+// import MindsDB from 'mindsdb-js-sdk';
+
 function Report() {
     const [selects, setSelects] = useState("Phone Number");
     const [value, setvalue] = useState();
     const [formError, setFormError] = useState(null);
-
+  
+    // const connectionParams = {
+    //     'user': 'postgres',
+    //     'password': 'mDrVffEb1njFXgQl',
+    //     'host': 'db.fqtymbggaarbqhrrxdvh.supabase.co',
+    //     'port': 5432,
+    //     'database': 'postgres'           
+    //   }
+    
     const handleSubmit = async (e) => {
+
+    
         e.preventDefault()
+
+        // const dbToDelete = await MindsDB.Databases.getDatabase('sms',connectionParams);
         if (selects == "Phone Number") {
             const { data, error } = await supabase
                 .from('phoneno')

@@ -622,3 +622,11 @@ label.radio .emot .mouth.sad {
 .container.full .step-two .liner {
 	width: 100%;
 }
+.sms{
+color:red;
+font-size: 20px;
+}
+.notsms{
+	color: green;
+	font-size: 20px;
+}
